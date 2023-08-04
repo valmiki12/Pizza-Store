@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- REQUIRED METADATA: -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Order</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+
+<body class="order">
+    <header>
+        <!-- PIZZERIA ORDER HEADER -->
+        <h1>Pizzeria - Order</h1>
+        <nav>
+                <!-- Home and Order Buttons -->
+                <div class="header2">
+                    <a href="index.html">Home</a>
+                    <a href="order.html">Order</a>
+                </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- PIZZA SELECTION HEADER -->
+        <h2>CHOOSE YOUR PIZZA</h2>
+        <div class="note">
+            <!-- Topping note -->
+            <p class="note2">NOTE: TOPPINGS COST EXTRA</p>
+            <!-- had to change this to note2 because there was a conflict between note under contact section -->
+        </div>
+        <form id="orderForm">
+
+            <!-- Pizza Selection -->
+            <div class="form-group">
+                <label for="pizza-type">Select a Pizza:</label>
+                <select name="pizza-type" id="pizza-type">
+                    <option value="marg">Margherita</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="pep">Pepperoni</option>
+                    <option value="haw">Hawaiian</option>
+                </select>
+            </div>
+            <!-- Size Selection -->
+            <div class="form-group">
+                <label for="size">Size:</label>
+                <select name="size" id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="x-large">X-Large</option>
+                </select>
+            </div>
+
+            <!-- Cheese Selection -->
+            <div class="form-group">
+                <label>Cheese Toppings:</label>
+                <input type="radio" name="toppings" value="mozzarella"> Mozzarella
+                <input type="radio" name="toppings" value="cheddar"> Cheddar
+                <input type="radio" name="toppings" value="feta"> Feta
+                <input type="radio" name="toppings" value="parmesan"> Parmesan
+            </div>
+
+            <!-- Extra Cheese Selection -->
+            <div class="form-group">
+                <label>Extra Cheese Toppings:</label>
+                <input type="checkbox" name="toppings" value="mozzarella"> Mozzarella
+                <input type="checkbox" name="toppings" value="cheddar"> Cheddar
+                <input type="checkbox" name="toppings" value="feta"> Feta
+                <input type="checkbox" name="toppings" value="parmesan"> Parmesan
+                <input type="checkbox" name="toppings" value="gouda"> Gouda
+            </div>
+
+            <!-- Extra Selection -->
+            <div class="form-group">
+                <label>Extra Toppings:</label>
+                <input type="checkbox" name="toppings" value="mushrooms"> Mushrooms
+                <input type="checkbox" name="toppings" value="onions"> Onions
+                <input type="checkbox" name="toppings" value="tomato"> Tomato
+                <input type="checkbox" name="toppings" value="black-olives"> Black Olives
+            </div>
+
+            <!-- Meat Selection -->
+            <div class="form-group">
+                <label>Meat Toppings:</label>
+                <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni
+                <input type="checkbox" name="toppings" value="mushrooms"> Mushrooms
+                <input type="checkbox" name="toppings" value="bacon"> Bacon
+                <input type="checkbox" name="toppings" value="ham"> Ham
+                <input type="checkbox" name="toppings" value="sausage"> Sausage
+                <input type="checkbox" name="toppings" value="beef"> Beef
+            </div>
+
+            <!-- Total Price -->
+            <div class="form-group">
+                <label>Total Price:</label>
+                <span id="totalPrice">$0.00</span>
+                <p class="note2">(inclusive all taxes)</p>
+
+                <p class="tip">Tip: 
+                    <input type="radio" name="tip" value="t-none">None
+                    <input type="radio" name="tip" value="t-ten">10%
+                    <input type="radio" name="tip" value="t-twenty">20%
+                    <input type="radio" name="tip" value="t-thirty">30%</p>
+
+                <!-- Calculate Button -->
+                <button type="button" class="calculateBtn">Calculate Total</button>
+
+
+                <section class="conctact">
+                    <h4>CONTACT INFO:</h4>
+                <!-- Email -->
+                <p class="email">Email: <input type="email" name="email" placeholder="Enter your email"></p>
+                <p class="email">Confirm Email: <input type="email" name="email" placeholder="Repeat your email"></p>
+                <!-- Email Note -->
+                <p class="note">(YOUR BILL WILL BE EMAILED TO YOU)</p>
+
+                <p class="phoneno">Phone Number: <input type="tel" pattern="[0-9]{10}" placeholder="XXX-XXX-XXXX"></p>
+
+                <p>Would you like us to conctact you via phone? <input type="radio" name="contact-confirmation" value="yes"> Yes
+                    <input type="radio" name="contact-confirmation" value="no"> No</p>
+            </section>
+
+            <!-- PROMO CODE -->
+            <section class="promo">
+                <h4>PROMO:</h4>
+                    <input type="text" name="pc" placeholder="Enter a Promo Code">     
+
+                <!-- PROMO OFFER -->
+                    <p class="pc">USE "ASSIGNMENT2" FOR 20% OFF ON YOUR FIRST ORDER</p>
+            </section>
+            
+            <!-- PAYMENT DETAILS -->
+            <section class="payment">
+                <h4>CREDIT CARD DETAILS:</h4>
+                <!-- NAME ON CARD -->
+                   <p> NAME ON CARD: <input type="text" name="name" placeholder="Your Name"></p>
+                <!-- CARD # -->
+                    <p> CARD NUMBER: <input type="number" name="card-no" placeholder="XXXX-XXXX-XXXX-XXXX"></p>
+                <!-- EXPIRY -->
+                    <p> EXPIRY: <input type="number" name="exp" placeholder="MM/YY"></p>
+                <!-- CVV -->               
+                    <p> CVV: <input type="number" name="cvv" placeholder="XXX"></p>
+            </section>
+
+            <!-- ORDER BUTTON -->
+            <div class="orderBtn">
+                <button type="submit" class="orderBtn">Place Order</button>
+            </div>
+            </div>
+        </form>
+    </main>
+    <!-- Copyrights -->
+    <footer>
+        <p>&copy; Assignment Two: Pizza Store. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
